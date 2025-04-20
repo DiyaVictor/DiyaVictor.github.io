@@ -1,5 +1,5 @@
 🌟 Diya's Digital Playground (a.k.a Portfolio Website)
-Welcome to my corner of the internet where pixels meet purpose and bugs meet their doom.
+Welcome to my corner of the internet, where pixels meet purpose and bugs meet their doom.
 This is my personal portfolio – a digital museum of my blood, sweat, and coffee-fueled code ☕💻.
 
 What’s Inside:
