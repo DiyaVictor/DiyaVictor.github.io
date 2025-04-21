@@ -1176,6 +1176,337 @@ footer {
 .theme-toggle i {
     transition: transform 0.5s ease;
 }
+
+/* Articles Section */
+.articles {
+    padding: 8rem 0;
+    background-color: var(--section-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.articles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center right, rgba(255, 51, 51, 0.05) 0%, transparent 50%);
+    z-index: 0;
+}
+
+.articles-carousel {
+    margin-top: 4rem;
+    position: relative;
+}
+
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.article-card {
+    min-width: 100%;
+    display: flex;
+    padding: 0 1rem;
+    opacity: 0.5;
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+}
+
+.article-card.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.article-date {
+    background: var(--primary);
+    color: var(--light);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    height: fit-content;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    white-space: nowrap;
+}
+
+.article-content {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    flex: 1;
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+}
+
+.article-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 51, 51, 0.1);
+    border-color: var(--primary-light);
+}
+
+.article-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.article-subtitle {
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.article-description {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.article-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.article-link i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.article-link:hover {
+    opacity: 0.8;
+}
+
+.article-link:hover i {
+    transform: translateX(5px);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.carousel-arrow {
+    background: var(--red-gradient);
+    color: var(--light);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.3);
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 51, 51, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--primary);
+    transform: scale(1.2);
+}
+
+/* Responsive styling for the articles section */
+@media (max-width: 992px) {
+    .article-card {
+        flex-direction: column;
+    }
+    
+    .article-date {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        margin-top: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+    /* Certifications Section */
+.certifications {
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.certifications::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at bottom left, rgba(255, 51, 51, 0.05) 0%, transparent 50%);
+    z-index: -1;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.certification-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s ease;
+    overflow: hidden;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.certification-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 51, 51, 0.15);
+    border-color: var(--primary-light);
+}
+
+.certification-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    transition: all 0.5s ease;
+}
+
+.certification-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+
+.certification-date {
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    transition: all 0.5s ease;
+}
+
+.certification-issuer {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.5s ease;
+}
+
+.certification-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 51, 51, 0.9) 0%, rgba(26, 26, 26, 0.95) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+    transform: scale(0.9);
+}
+
+.certification-card:hover .certification-overlay {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.certification-details {
+    color: var(--light);
+}
+
+.certification-details p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.certification-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--light);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    gap: 0.5rem;
+}
+
+.certification-link:hover {
+    transform: translateX(5px);
+}
+
+/* For dark/light mode compatibility */
+body.light-mode .certification-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .certification-issuer {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animation for the section */
+.certifications .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.certifications .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
     </style>
 </head>
 <body>
@@ -1190,8 +1521,8 @@ footer {
             </div>
             <h1 class="loader-logo">
                 <div class="loader-text">
-                    ANSLEY DIYA
-                    <div class="loader-text-overlay">ANSLEY DIYA</div>
+                    Diya flexing some frontend finesse...
+                    <div class="loader-text-overlay">Diya flexing some frontend finesse...</div>
                 </div>
             </h1>
             <div class="progress-percentage">0%</div>
@@ -1228,10 +1559,10 @@ footer {
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content fade-in">
-                <div class="hero-intro">Hello, I'm</div>
+                <div class="hero-intro">Hello world, I'm</div>
                 <h1 class="hero-title">Ansley Diya</h1>
-                <h2 class="hero-subtitle">A Computer Science Engineer & Full-Stack Developer crafting digital experiences.</h2>
-                <a href="#contact" class="hero-cta">Get In Touch <i class="fas fa-arrow-right"></i></a>
+                <h2 class="hero-subtitle">The Software Engineer Next Door</h2>
+                <a href="#contact" class="hero-cta">Code Me Maybe? <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
         <div class="hero-scroll">
@@ -1246,9 +1577,10 @@ footer {
             <h2 class="section-title fade-in">About Me</h2>
             <div class="about-content">
                 <div class="about-text fade-in">
-                    <p>I'm a Computer Science Engineering student at MVJ College of Engineering, Bangalore, passionate about building innovative solutions through technology. With a strong foundation in both front-end and back-end development, I aim to create impactful digital experiences.</p>
-                    <p>Currently working as a Software Engineering Intern at NTT DATA, I've developed expertise in RESTful APIs, React.js, and authentication systems. My previous experiences at Xzion Infotech and Larsen & Toubro have honed my skills in responsive design, data analysis, and project management.</p>
-                    <p>I thrive on challenges and continuously seek opportunities to expand my knowledge in emerging technologies like AI, Cloud Computing, and IoT.</p>
+                    <p>I’m Diya — a final-year Computer Science Engineering student at MVJ College of Engineering, Bangalore, and a full-time tech enthusiast with a side hustle in chasing innovation.</p>
+                    <p>I recently wrapped up an amazing journey as a Software Engineering Intern Dell Technologies, where I turn coffee into clean code and ideas into impact. Whether it’s building sleek interfaces with React.js, wiring up robust RESTful APIs, or making sure authentication systems behave — I’m all about writing code that doesn’t just work, but wows.</p>
+                    <p>I thrive on challenges and continuously seek opportunities to expand my knowledge in emerging technologies like AI, Cloud Computing, and DevOps.</p>
+                    <p>My mission? To engineer solutions that are as smart as they are impactful, and maybe even make people smile along the way.</p>
                     <div class="skills-list">
                         <span class="skill-tag">React.js</span>
                         <span class="skill-tag">Node.js</span>
@@ -1274,7 +1606,7 @@ footer {
                         <div class="stat-label">Projects</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">40+</div>
+                        <div class="stat-number">45+</div>
                         <div class="stat-label">Certifications</div>
                     </div>
                 </div>
@@ -1292,7 +1624,7 @@ footer {
                     <div class="timeline-content">
                         <div class="timeline-date">Jan 2025 - Present</div>
                         <h3 class="timeline-title">Software Engineering Intern</h3>
-                        <h4 class="timeline-subtitle">DELL, Bangalore</h4>
+                        <h4 class="timeline-subtitle">Dell, Bangalore</h4>
                         <p class="timeline-description">Developing and optimizing RESTful APIs, reducing response time by 30%. Building dynamic dashboards with React.js and Node.js. Implementing authentication and role-based access control systems.</p>
                     </div>
                 </div>
@@ -1317,6 +1649,74 @@ footer {
             </div>
         </div>
     </section>
+
+    <!-- Articles Section -->
+<section id="articles" class="articles">
+    <div class="container">
+        <h2 class="section-title fade-in">My Published Articles- TEDx</h2>
+        <div class="articles-carousel">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Article 1 -->
+                    <div class="article-card fade-in">
+                        <div class="article-date">September 10, 2023</div>
+                        <div class="article-content">
+                            <h3 class="article-title">Aging Gracefully</h3>
+                            <h4 class="article-subtitle">Growing old is not a curse — it’s a second chapter</h4>
+                            <p class="article-description">A deeply personal story on growing old, filled with warmth, wisdom, and a gentle nudge to embrace every phase of life. It shifts the lens from aging as decline to aging as rediscovery.</p>
+                            <a href="https://tedxmvjce.substack.com/p/old-age" class="article-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 2 -->
+                    <div class="article-card fade-in">
+                        <div class="article-date">December 31, 2023</div>
+                        <div class="article-content">
+                            <h3 class="article-title"> I Won’t Be Home for Christmas</h3>
+                            <h4 class="article-subtitle">Reflections on distance, warmth, and the spirit of giving</h4>
+                            <p class="article-description">A poetic narrative on celebrating Christmas away from home — where virtual embraces and heartfelt memories fill the void of physical presence. A gentle reminder that love always finds its way.</p>
+                            <a href="https://tedxmvjce.substack.com/p/christmas-214" class="article-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 3 -->
+                    <div class="article-card fade-in">
+                        <div class="article-date">July 23, 2023</div>
+                        <div class="article-content">
+                            <h3 class="article-title">Each of Us May Testify</h3>
+                            <h4 class="article-subtitle">What does justice truly mean in a world that isn’t always fair?</h4>
+                            <p class="article-description">This article explores justice through personal lenses and philosophical insight — challenging us to rethink morality, fairness, and the quiet courage it takes to stand for what’s right.</p>
+                            <a href="https://tedxmvjce.substack.com/p/justice" class="article-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Article 4 -->
+                    <div class="article-card fade-in">
+                        <div class="article-date">March 24, 2024</div>
+                        <div class="article-content">
+                            <h3 class="article-title">Straight-Faced to Side-Splitting: Realism to Absurdity</h3>
+                            <h4 class="article-subtitle">The evolution of art from the real to the ridiculous</h4>
+                            <p class="article-description">With wit and wonder, this piece walks us through the transformation of art — from hyperrealism to playful chaos. A fun and thoughtful look at how absurdity became art’s boldest statement.</p>
+                            <a href="https://tedxmvjce.substack.com/p/realism-to-absurdity" class="article-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                    <span class="carousel-dot"></span>
+                </div>
+                <button class="carousel-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+</section>
     
     <!-- Projects Section -->
     <section id="projects" class="projects">
@@ -1351,7 +1751,7 @@ footer {
                 </div>
                 <div class="project-card fade-in" data-category="mobile">
                     <div class="project-img">
-                        <img src="/api/placeholder/600/400" alt="Wanderlust Wingman Project">
+                        <img src="ChatGPT Image Apr 21, 2025, 11_30_07 AM.png" alt="Wanderlust Wingman Project">
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
@@ -1530,6 +1930,134 @@ footer {
             </div>
         </div>
     </section>
+
+    <!-- Certifications Section -->
+<section id="certifications" class="certifications">
+    <div class="container">
+        <h2 class="section-title fade-in">Certifications</h2>
+        <div class="certifications-grid">
+            <div class="certification-card fade-in">
+                <div class="certification-icon">
+                    <i class="fab fa-aws"></i>
+                </div>
+                <h3 class="certification-title">AWS Academy Introduction to Cloud</h3>
+                <div class="certification-date">November 2024</div>
+                <div class="certification-issuer">Amazon Web Services</div>
+                <div class="certification-overlay">
+                    <div class="certification-details">
+                        <p>Comprehensive introduction to AWS cloud services and fundamentals of cloud computing architecture.</p>
+                        <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certification-card fade-in">
+                <div class="certification-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="certification-title">IDEATHON</h3>
+                <div class="certification-date">November 2024</div>
+                <div class="certification-issuer">Indian Institute of Information Technology Vadodara</div>
+                <div class="certification-overlay">
+                    <div class="certification-details">
+                        <p>Participated in a competitive ideation hackathon focused on innovative technology solutions.</p>
+                        <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certification-card fade-in">
+                <div class="certification-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="certification-title">Artificial Intelligence with Machine Learning Workshop</h3>
+                <div class="certification-date">October 2024</div>
+                <div class="certification-issuer">IISc Bangalore</div>
+                <div class="certification-overlay">
+                    <div class="certification-details">
+                        <p>Intensive workshop on AI and ML fundamentals, algorithms, and practical implementations.</p>
+                        <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certification-card fade-in">
+                <div class="certification-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="certification-title">Website Design and Development Internship</h3>
+                <div class="certification-date">July 2024</div>
+                <div class="certification-issuer">Internship Studio</div>
+                <div class="certification-overlay">
+                    <div class="certification-details">
+                        <p>Hands-on internship focused on modern web design principles and development practices.</p>
+                        <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certification-card fade-in">
+                <div class="certification-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="certification-title">Fundamentals of Responsible Generative AI</h3>
+                <div class="certification-date">July 2024</div>
+                <div class="certification-issuer">Microsoft</div>
+                <div class="certification-overlay">
+                    <div class="certification-details">
+                        <p>Course covering ethical implications, best practices, and implementation of generative AI technologies.</p>
+                        <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certification-card fade-in">
+                <div class="certification-icon">
+                    <i class="fas fa-pencil-ruler"></i>
+                </div>
+                <h3 class="certification-title">Design Workshop: Sigma at Figma</h3>
+                <div class="certification-date">July 2024</div>
+                <div class="certification-issuer">GDSC</div>
+                <div class="certification-overlay">
+                    <div class="certification-details">
+                        <p>Workshop focused on using Figma's Sigma tool for advanced UI/UX design workflows.</p>
+                        <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certification-card fade-in">
+                <div class="certification-icon">
+                    <i class="fab fa-android"></i>
+                </div>
+                <h3 class="certification-title">Android Development Workshop</h3>
+                <div class="certification-date">December 2023</div>
+                <div class="certification-issuer">GDSC</div>
+                <div class="certification-overlay">
+                    <div class="certification-details">
+                        <p>Hands-on workshop covering Android application development fundamentals and best practices.</p>
+                        <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certification-card fade-in">
+                <div class="certification-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3 class="certification-title">Developer and Technology Program</h3>
+                <div class="certification-date">October 2023</div>
+                <div class="certification-issuer">Accenture UK, Forage</div>
+                <div class="certification-overlay">
+                    <div class="certification-details">
+                        <p>Virtual experience program focused on industry-standard software development practices and technologies.</p>
+                        <a href="#" class="certification-link">View Certificate <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -1817,6 +2345,146 @@ function enableDarkMode() {
     themeIcon.className = 'fas fa-moon';
     localStorage.setItem('theme', 'dark');
 }
+
+// Articles Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(document.querySelectorAll('.article-card'));
+    const nextButton = document.querySelector('.next-arrow');
+    const prevButton = document.querySelector('.prev-arrow');
+    const dotsNav = document.querySelector('.carousel-dots');
+    const dots = Array.from(document.querySelectorAll('.carousel-dot'));
+    const carousel = document.querySelector('.carousel-container');
+    const width = carousel.offsetWidth;
+    
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    let currentIndex = 0;
+    
+    // Arrange slides next to each other
+    slides.forEach((slide, index) => {
+        slide.style.left = slideWidth * index + 'px';
+    });
+    
+    // Set first slide as active
+    slides[0].classList.add('active');
+    
+    // Function to move to a specific slide
+    const moveToSlide = (track, currentIndex, targetIndex) => {
+        if (targetIndex < 0) targetIndex = slides.length - 1;
+        if (targetIndex >= slides.length) targetIndex = 0;
+        
+        track.style.transform = 'translateX(-' + (targetIndex * width) + 'px)';
+        
+        // Update active class on slides
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[targetIndex].classList.add('active');
+        
+        // Update dots
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[targetIndex].classList.add('active');
+        
+        currentIndex = targetIndex;
+        return currentIndex;
+    };
+    
+    // Next button event listener
+    nextButton.addEventListener('click', () => {
+        currentIndex = moveToSlide(track, currentIndex, currentIndex + 1);
+    });
+    
+    // Previous button event listener
+    prevButton.addEventListener('click', () => {
+        currentIndex = moveToSlide(track, currentIndex, currentIndex - 1);
+    });
+    
+    // Dot navigation event listeners
+    dotsNav.addEventListener('click', e => {
+        const targetDot = e.target.closest('.carousel-dot');
+        if (!targetDot) return;
+        
+        const targetIndex = dots.indexOf(targetDot);
+        currentIndex = moveToSlide(track, currentIndex, targetIndex);
+    });
+    
+    // Auto slide functionality with pause on hover
+    let autoSlideInterval;
+    
+    const startAutoSlide = () => {
+        autoSlideInterval = setInterval(() => {
+            currentIndex = moveToSlide(track, currentIndex, currentIndex + 1);
+        }, 5000); // Change slide every 5 seconds
+    };
+    
+    const stopAutoSlide = () => {
+        clearInterval(autoSlideInterval);
+    };
+    
+    // Start auto sliding
+    startAutoSlide();
+    
+    // Pause on hover
+    const carouselContainer = document.querySelector('.carousel-container');
+    carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+    carouselContainer.addEventListener('mouseleave', startAutoSlide);
+    
+    // Add to fade-in animations
+    const fadeInObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                fadeInObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+    
+    document.querySelectorAll('.articles .fade-in').forEach(el => {
+        fadeInObserver.observe(el);
+    });
+    
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carouselContainer.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carouselContainer.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+    
+    const handleSwipe = () => {
+        const threshold = 50; // Minimum swipe distance
+        
+        if (touchStartX - touchEndX > threshold) {
+            // Swipe left - go to next slide
+            currentIndex = moveToSlide(track, currentIndex, currentIndex + 1);
+        } else if (touchEndX - touchStartX > threshold) {
+            // Swipe right - go to previous slide
+            currentIndex = moveToSlide(track, currentIndex, currentIndex - 1);
+        }
+    };
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Intersection Observer to trigger animations when scrolling
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(element => {
+        observer.observe(element);
+    });
+});
+
     </script>
 </body>
 </html>
