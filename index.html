@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ansley Diya | Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+        // Replace with your actual EmailJS public key
+        emailjs.init("YluoFFeTNbehjHEaJ");
+    })();
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
         
@@ -2289,32 +2296,59 @@ body.light-mode .certification-issuer {
             });
         });
         
-        // Form Submission
-        const contactForm = document.querySelector('.contact-form');
+        // Form Submission with EmailJS
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('.contact-form');
+    
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
         
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // Simple form validation
+        if (name && email && subject && message) {
+            // Get submit button and change text
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
             
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            // Prepare template parameters
+            const templateParams = {
+                name: name,
+                from_email: email,
+                subject: subject,
+                message: message,
+                submit_date: new Date().toLocaleString()
+            };
             
-            // Simple form validation
-            if (name && email && subject && message) {
-                // Here you would typically send the form data to a server
-                // For demo purposes, just reset the form
-                alert('Thank you for your message! I\'ll get back to you soon.');
-                contactForm.reset();
-            } else {
-                alert('Please fill out all fields.');
-            }
-        });
-        const themeToggle = document.getElementById('themeToggle');
-const themeIcon = themeToggle.querySelector('i');
-const body = document.body;
+            // Send email using EmailJS
+            emailjs.send('service_lzuitw9', 'template_uixi0qd', templateParams)
+                .then(function() {
+                    alert('Thank you for your message! I\'ll get back to you soon.');
+                    contactForm.reset();
+                }, function(error) {
+                    console.error('EmailJS error:', error);
+                    alert('There was a problem sending your message. Please try again later.');
+                })
+                .finally(function() {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+        } else {
+            alert('Please fill out all fields.');
+        }
+    });
+});
 
+// Theme toggle (keep your existing code)
+const themeToggle = document.getElementById('themeToggle'); 
+const themeIcon = themeToggle.querySelector('i'); 
+const body = document.body;
 // Check for saved user preference
 if (localStorage.getItem('theme') === 'light') {
     enableLightMode();
