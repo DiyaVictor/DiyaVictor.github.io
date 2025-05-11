@@ -10,8 +10,6 @@ What’s Inside:
 
 🎓 Achievements that scream “I didn’t sleep for this”
 
-📝 Resume, because adulting
-
 📮 A contact form – slide into my inbox, professionally, of course
 
 Built With: HTML | CSS | JavaScript | Love & Debugging 
@@ -19,4 +17,4 @@ Built With: HTML | CSS | JavaScript | Love & Debugging
 Warning: May cause sudden urges to hire, collaborate, or send fan mail.
 
 🎯 Live Demo – https://diyavictor.github.io/
-⭐ Star it if you laughed. Fork it if you're inspired. Email me if you're hiring 😎
+⭐ Email me if you're hiring 
