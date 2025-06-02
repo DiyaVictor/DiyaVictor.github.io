@@ -1515,7 +1515,338 @@ body.light-mode .certification-issuer {
 body.light-mode .logo {
     color: #ff3333; /* red tone */
 }
+.section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--red-gradient);
+            border-radius: 2px;
+        }
 
+        .education {
+            padding: 8rem 0;
+            background-color: var(--section-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(255, 51, 51, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .education-grid {
+            display: grid;
+            gap: 3rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .education-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid var(--card-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--red-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(255, 51, 51, 0.1);
+            border-color: var(--primary-light);
+        }
+
+        .education-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .education-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .education-info {
+            flex: 1;
+        }
+
+        .education-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-gradient);
+            color: var(--primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 51, 51, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        .education-date i {
+            font-size: 0.8rem;
+        }
+
+        .education-institution {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .education-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .education-location i {
+            color: var(--primary);
+        }
+
+        .education-degrees {
+            margin-top: 2rem;
+        }
+
+        .degree-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .degree-item:last-child {
+            border-bottom: none;
+        }
+
+        .degree-item:hover {
+            padding-left: 1rem;
+            background: rgba(255, 51, 51, 0.02);
+            border-radius: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .degree-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .degree-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--red-gradient);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .degree-score {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .degree-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .highlight-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-badge:hover {
+            background: rgba(255, 51, 51, 0.1);
+            border-color: rgba(255, 51, 51, 0.3);
+            color: var(--text-primary);
+        }
+
+        .highlight-badge i {
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .university-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .university-highlight {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .university-highlight:hover {
+            background: rgba(255, 51, 51, 0.05);
+            border-color: rgba(255, 51, 51, 0.2);
+        }
+
+        .highlight-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .cgpa-display {
+            background: var(--accent-gradient);
+            border: 1px solid rgba(255, 51, 51, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cgpa-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .cgpa-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Light mode */
+        body.light-mode {
+            --bg-color: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-border: rgba(0, 0, 0, 0.1);
+            --text-primary: #1a1a1a;
+            --text-secondary: rgba(0, 0, 0, 0.7);
+            --text-muted: rgba(0, 0, 0, 0.5);
+            --section-bg: #f8f9fa;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .education {
+                padding: 6rem 0;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .education-card {
+                padding: 2rem;
+            }
+            
+            .education-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .university-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .degree-highlights {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .education-card {
+                padding: 1.5rem;
+            }
+            
+            .education-institution {
+                font-size: 1.5rem;
+            }
+            
+            .cgpa-value {
+                font-size: 1.8rem;
+            }
+        }
 
 </style>
 </head>
@@ -1645,6 +1976,140 @@ body.light-mode .logo {
                         <h3 class="timeline-title">IT Intern</h3>
                         <h4 class="timeline-subtitle">Larsen & Toubro Ltd., Bangalore</h4>
                         <p class="timeline-description">Conducted data analysis using MS Excel, improving decision-making efficiency. Managed cross-functional projects with 100% compliance rate. Automated data entry processes, reducing manual effort by 30%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title fade-in">Education</h2>
+            
+            <div class="education-grid">
+                <!-- University Education -->
+                <div class="education-card fade-in">
+                    <div class="education-header">
+                        <div class="education-info">
+                            <div class="education-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                2021 - 2025
+                            </div>
+                            <h3 class="education-institution">MVJ College of Engineering</h3>
+                            <div class="education-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Bangalore, Karnataka
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="education-degrees">
+                        <div class="degree-item">
+                            <div class="degree-title">Bachelor of Engineering [Honors] in Computer Science Engineering</div>
+                            <div class="degree-highlights">
+                                <span class="highlight-badge">
+                                    <i class="fas fa-trophy"></i>
+                                    Honors Degree Program
+                                </span>
+                                <span class="highlight-badge">
+                                    <i class="fas fa-code"></i>
+                                    Software Engineering Specialization
+                                </span>
+                                <span class="highlight-badge">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    Expected: May 2025
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="university-highlights">
+                        <div class="university-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="highlight-text">Advanced Problem Solving</div>
+                        </div>
+                        <div class="university-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="highlight-text">Full-Stack Development</div>
+                        </div>
+                        <div class="university-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="highlight-text">Data Structures & Algorithms</div>
+                        </div>
+                        <div class="university-highlight">
+                            <div class="highlight-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="highlight-text">System Design</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cgpa-display">
+                        <div class="cgpa-label">Current CGPA</div>
+                        <div class="cgpa-value">8.77</div>
+                    </div>
+                </div>
+                
+                <!-- School Education -->
+                <div class="education-card fade-in">
+                    <div class="education-header">
+                        <div class="education-info">
+                            <div class="education-date">
+                                <i class="fas fa-calendar-alt"></i>
+                                2017 - 2021
+                            </div>
+                            <h3 class="education-institution">St. Vincent Pallotti School</h3>
+                            <div class="education-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Bangalore, Karnataka
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="education-degrees">
+                        <div class="degree-item">
+                            <div class="degree-title">Indian School Certificate (ISC) - Class XII</div>
+                            <div class="degree-score">93.8%</div>
+                            <div class="degree-highlights">
+                                <span class="highlight-badge">
+                                    <i class="fas fa-star"></i>
+                                    Outstanding Performance
+                                </span>
+                                <span class="highlight-badge">
+                                    <i class="fas fa-atom"></i>
+                                    Science Stream
+                                </span>
+                                <span class="highlight-badge">
+                                    <i class="fas fa-calendar"></i>
+                                    2019 - 2021
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="degree-item">
+                            <div class="degree-title">Indian Certificate of Secondary Education (ICSE) - Class X</div>
+                            <div class="degree-score">94.2%</div>
+                            <div class="degree-highlights">
+                                <span class="highlight-badge">
+                                    <i class="fas fa-medal"></i>
+                                    Academic Excellence
+                                </span>
+                                <span class="highlight-badge">
+                                    <i class="fas fa-microscope"></i>
+                                    STEM Foundation
+                                </span>
+                                <span class="highlight-badge">
+                                    <i class="fas fa-calendar"></i>
+                                    2017 - 2019
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
